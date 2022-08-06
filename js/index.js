@@ -1,4 +1,4 @@
-console.log("my LEADS extension")
+console.log("myTip extension")
 let myLeads = []
 
 
@@ -7,6 +7,7 @@ const inputButton = document.getElementById("input-btn")
 const ulElement = document.getElementById("ul-el")
 const deleteButton = document.getElementById("delete-btn")
 const saveUrlButton = document.getElementById("save-url-btn")
+
 
 // localStorage.setItem("myLeads",JSON.stringify(myLeads))
 // localStorage.getItem("myLeads")
@@ -35,11 +36,13 @@ saveUrlButton.addEventListener("click", function () {
 
 })
 
-deleteButton.addEventListener("dblclick", function () {
+deleteButton.addEventListener("click", function () {
     localStorage.clear()
     myLeads = []
     renderLeads()
 })
+
+
 
 function renderLeads() {
     let listItems = ""
@@ -61,6 +64,7 @@ function renderLeads() {
                 <a href='${myLeads[i]}' target='_blank'> 
                     ${myLeads[i]}
                 </a>
+                <button id="delete-mark"> &#9746 </button>
             </li>
             `
     }
